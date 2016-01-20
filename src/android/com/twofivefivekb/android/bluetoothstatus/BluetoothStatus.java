@@ -30,6 +30,9 @@ public class BluetoothStatus extends CordovaPlugin {
         if (action.equals("enableBT")) {
             enableBT();
             return true;
+        }else if (action.equals("disableBT")) {
+            disableBT();
+            return true;
         } else if (action.equals("promptForBT")) {
             promptForBT();
             return true;
@@ -68,6 +71,15 @@ public class BluetoothStatus extends CordovaPlugin {
             Log.e(LOG_TAG, "Bluetooth is not supported");
         } else if (!bluetoothAdapter.isEnabled()) {
             bluetoothAdapter.enable();
+        }
+    }
+
+    private void disableBT() {
+        //enable bluetooth without prompting
+        if (bluetoothAdapter == null) {
+            Log.e(LOG_TAG, "Bluetooth is not supported");
+        } else if (bluetoothAdapter.isEnabled()) {
+            bluetoothAdapter.disable();
         }
     }
 

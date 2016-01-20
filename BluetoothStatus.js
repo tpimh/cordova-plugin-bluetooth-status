@@ -14,6 +14,10 @@ BluetoothStatus.enableBT = function() {
     exec(null, null, "BluetoothStatus", "enableBT", []);
 };
 
+BluetoothStatus.disableBT = function() {
+    exec(null, null, "BluetoothStatus", "disableBT", []);
+};
+
 BluetoothStatus.promptForBT = function() {
     exec(null, null, "BluetoothStatus", "promptForBT", []);
 };
